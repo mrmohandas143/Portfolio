@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #0066FF;
+  --color-gold-hover: #0052CC;
+  --color-darkbg: #000000;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Poppins", sans-serif;
+}
+
+/* Custom Variant for Class-based Dark Mode in Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+@variant light (&:where(.light, .light *));
+
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #F3F4F6;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #F9F9FB;
+  color: #1F2937;
+}
+
+/* Fonts */
+.font-display {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+body.light ::-webkit-scrollbar-track {
+  background: #F9F9FB;
+}
+::-webkit-scrollbar-thumb {
+  background: #0066FF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0052CC;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(31, 41, 55, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.05);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 102, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.light .glass-panel:hover {
+  border-color: rgba(0, 102, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.1);
+}
+
+/* Glowing Background Blobs */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+  animation: float-blob 20s infinite alternate;
+}
+
+@keyframes float-blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -50px) scale(1.2);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.8);
+  }
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #0066FF;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.custom-cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 102, 255, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.1s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+/* Hide original cursor on desktops */
+@media (min-width: 1024px) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor select,
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Typing Caret Animation */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typing-caret {
+  border-right: 3px solid #0066FF;
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Golden Gradient Border utility */
+.gold-gradient-border {
+  position: relative;
+  background: #000000;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.light .gold-gradient-border {
+  background: #FFFFFF;
+}
+
+.gold-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  background: linear-gradient(135deg, rgba(0,102,255,0.1), rgba(0,102,255,0.8), rgba(0,102,255,0.1));
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+.gold-gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Particle Canvas style */
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
