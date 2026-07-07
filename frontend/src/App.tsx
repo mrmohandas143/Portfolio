@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "./components/LoadingScreen";
-import CustomCursor from "./components/CustomCursor";
 import ScrollProgress from "./components/ScrollProgress";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -29,9 +28,6 @@ export default function App() {
 
       {!isLoading && (
         <div className="relative min-h-screen bg-[#0B0B0B] dark:bg-[#0B0B0B] light:bg-[#F9F9FB] transition-colors duration-300 overflow-x-hidden">
-          {/* Custom cursor overlay */}
-          <CustomCursor />
-          
           {/* Top scroll progress loader */}
           <ScrollProgress />
           

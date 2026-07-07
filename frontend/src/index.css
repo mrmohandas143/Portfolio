@@ -104,45 +104,6 @@ body.light ::-webkit-scrollbar-track {
   }
 }
 
-/* Custom Cursor Styles */
-.custom-cursor {
-  width: 8px;
-  height: 8px;
-  background-color: #0066FF;
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition: width 0.2s, height 0.2s, background-color 0.2s;
-}
-
-.custom-cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 2px solid rgba(0, 102, 255, 0.4);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.1s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
-}
-
-/* Hide original cursor on desktops */
-@media (min-width: 1024px) {
-  body.has-custom-cursor {
-    cursor: none;
-  }
-  body.has-custom-cursor a,
-  body.has-custom-cursor button,
-  body.has-custom-cursor select,
-  body.has-custom-cursor input,
-  body.has-custom-cursor textarea,
-  body.has-custom-cursor [role="button"] {
-    cursor: none;
-  }
-}
 
 /* Typing Caret Animation */
 @keyframes blink {
