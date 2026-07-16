@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { SiPython, SiJavascript, SiReact, SiVite, SiDjango, SiMysql, SiSqlite, SiGit, SiGithub } from "react-icons/si";
+import { SiPython, SiJavascript, SiReact, SiVite, SiDjango, SiMysql, SiSqlite, SiGit, SiGithub, SiMongodb, SiUipath } from "react-icons/si";
 import { FaBrain, FaRegEye, FaCogs, FaDatabase, FaLaptopCode, FaWrench, FaHtml5, FaCss3Alt, FaFileExcel } from "react-icons/fa";
 
 interface SkillItem {
@@ -52,6 +52,7 @@ export default function Skills() {
       skills: [
         { name: "MySQL", level: 80, icon: <SiMysql className="text-blue-400" /> },
         { name: "SQLite", level: 85, icon: <SiSqlite className="text-sky-500" /> },
+        { name: "MongoDB", level: 80, icon: <SiMongodb className="text-emerald-500" /> },
       ],
     },
     {
@@ -69,6 +70,7 @@ export default function Skills() {
       skills: [
         { name: "Git", level: 80, icon: <SiGit className="text-orange-600" /> },
         { name: "GitHub", level: 85, icon: <SiGithub className="text-white" /> },
+        { name: "UiPath", level: 80, icon: <SiUipath className="text-orange-500" /> },
         { name: "MS Office (Word, PPT, Excel)", level: 90, icon: <FaFileExcel className="text-green-600" /> },
       ],
     },

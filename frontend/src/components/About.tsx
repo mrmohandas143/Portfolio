@@ -132,7 +132,7 @@ export default function About() {
               {/* Projects */}
               <div className="glass-panel p-5 rounded-xl border border-gold/10 hover:border-gold/30 transition-all text-center">
                 <p className="font-display font-bold text-2xl md:text-3xl text-gold">
-                  <StatCounter value={2} />
+                  <StatCounter value={4} />
                 </p>
                 <p className="font-sans text-xs text-gray-400 dark:text-gray-400 light:text-gray-600 mt-1 uppercase tracking-wider">
                   Projects

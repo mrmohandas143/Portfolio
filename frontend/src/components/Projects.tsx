@@ -35,6 +35,26 @@ const projectsData: Project[] = [
     githubUrl: "https://github.com/mrmohandas143/College-Management",
     image: "/college_management_dashboard.png",
   },
+  {
+    id: 3,
+    title: "Campus Monitoring System",
+    category: "AI/Robotics",
+    description: "Built an AI-powered face recognition application to classify students/staff, provide real-time email/SMS alerts for unauthorized access, and enhance campus security using OpenCV and Python.",
+    longDescription: "Developed an AI-powered face recognition application designed to enhance campus security. Leveraging OpenCV and advanced face recognition libraries, the system performs real-time detection and classification of students and staff members. It actively monitors entrance points and is equipped with an automated security response module to trigger instant email and SMS alerts for unauthorized access attempts, keeping security personnel informed in real time.",
+    technologies: ["Python", "OpenCV (cv2)", "Face Recognition", "Computer Vision", "Email Alerts"],
+    githubUrl: "https://github.com/Darkvoide/Monitoring_App",
+    image: "/campus_monitoring_system.png",
+  },
+  {
+    id: 4,
+    title: "JARVIS - AI Voice Assistant",
+    category: "AI/Robotics",
+    description: "Developed an AI-powered voice assistant with speech recognition, Google Gemini AI integration, neural text-to-speech, web automation, Wikipedia search, and Raspberry Pi GPIO-based hardware control.",
+    longDescription: "Developed a sophisticated AI voice assistant inspired by JARVIS, powered by Python and the Google Gemini API. It leverages asynchronous programming (AsyncIO) to execute speech recognition, web automation, Wikipedia searches, and neural text-to-speech (Edge-TTS) for fluid voice interactions. Additionally, it integrates with Raspberry Pi GPIO pins to control local hardware devices, bridging virtual intelligence with physical systems.",
+    technologies: ["Python", "Google Gemini API", "SpeechRecognition", "Edge-TTS", "AsyncIO"],
+    githubUrl: "https://github.com/mrmohandas143/Jarvis",
+    image: "/jarvis_voice_assistant.png",
+  },
 ];
 
 export default function Projects() {
